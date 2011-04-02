@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Jquery Navigate Example</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+        <script src="../jquery.navigate.js"></script>
+        <script>
+          $(function(){
+              $('ul li').not('.nokeyboard').navigate().click(function(){
+              
+                alert($(this).text() + ' clicked!');
+              });
+          });
+        </script>
+        <style>
+          body {
+            font-size: 20px;
+            font-family: sans-serif;
+          }
+          
+          ul {
+            width: 100px;
+            float: left;
+          }
+          
+          ul li.active {
+            color: red;
+          }
+          
+          ul li.nokeyboard {
+            color: #999;
+          }
+        </style>
+    </head>
+    <body>
+        <ul>
+          <li>Item 1</li>
+          <li>Item 2</li>
+          <li class="nokeyboard">Item 3</li>
+          <li>Item 4</li>
+        </ul>
+        
+        <ul>
+          <li>Item 5</li>
+          <li>Item 6</li>
+          <li>Item 7</li>
+          <li class="nokeyboard">Item 8</li>
+        </ul>
+    </body>
+</html>
+

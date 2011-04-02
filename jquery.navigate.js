@@ -1,9 +1,8 @@
 /*
  * jQuery.navigate - Allow any group of dom elements to be navigated with the keyboard arrows
  * Tom Moor, http://tommoor.com
- * Released into the public domain
- * Date: 05 April 2011
- * @author Tom Moor
+ * Copyright (c) 2011 Tom Moor
+ * MIT Licensed
  * @version 1.0
  */
 

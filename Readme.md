@@ -49,6 +49,6 @@ __Example 2__
 Releases are available for download from
 [GitHub](http://github.com/tommoor/navigate-jquery-plugin/downloads).
 
-__Development:__ [zap.js](https://github.com/tommoor/navigate-jquery-plugin/raw/master/jquery.navigate.js)
+__Development:__ [jquery.navigate.js](https://github.com/tommoor/navigate-jquery-plugin/raw/master/jquery.navigate.js)
 
-__Production:__ [zap.min.js](https://github.com/tommoor/navigate-jquery-plugin/raw/master/jquery.navigate.min.js)
+__Production:__ [jquery.navigate.min.js](https://github.com/tommoor/navigate-jquery-plugin/raw/master/jquery.navigate.min.js)

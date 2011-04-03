@@ -6,7 +6,9 @@
         <script src="../jquery.navigate.js"></script>
         <script>
           $(function(){
-              $('ul li').not('.nokeyboard').navigate().click(function(){
+              $('ul li').not('.nokeyboard').navigate({
+                wrap: true
+              }).click(function(){
               
                 alert($(this).text() + ' clicked!');
               });

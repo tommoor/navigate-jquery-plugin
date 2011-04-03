@@ -48,10 +48,10 @@
   });
 
 
-  navigate = function(x,y) {
+  navigate = function(x, y) {
   
     var delta = x+y;
-    var $closest = $collection.first();
+    var $closest = $current;
     var $difference = 0;
     var a,b,d;
 
@@ -72,9 +72,13 @@
       // closest node so far?
       if(b < $difference || $difference === 0){
         $closest = a; $difference = b;
-      }      
+      }
     });
     
+    // no more nodes in this direction
+    if(options.wrap && $current === $closest) return;
+    
+    // trigger node as active
     $current.removeClass(options.activeClass);
     $current.trigger('blur');
     $closest.addClass(options.activeClass);
@@ -83,6 +87,7 @@
   }
   
   
+  // if mouse is enabled allow it to trigger nodes
   if(options.mouse){
     $collection.mouseover(function(){
       $('.'+options.activeClass).removeClass(options.activeClass).trigger('blur');

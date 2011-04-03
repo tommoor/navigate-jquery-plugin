@@ -42,8 +42,19 @@ __Example 2__
             right: 68,
             select: 13
           }
-        });      
-        
+        });
+
+
+### destroy
+
+In the event that you need to remove the keyboard navigation you can do so cleanly by passing 'destroy' as the first argument to the plugin
+
+
+__Example__
+
+        $('.menu-item').navigate('destroy');
+
+
 ## Download
 
 Releases are available for download from

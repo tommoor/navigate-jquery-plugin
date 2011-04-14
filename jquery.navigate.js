@@ -26,12 +26,11 @@
   var methods = {
     init : function(o){
     
-      options = $.extend(defaults, o);
-      $current = this.first().addClass(options.activeClass);
-      $collection = this;
-      
+      var options = $.extend(defaults, o);
+      var $current = this.first().addClass(options.activeClass);
+      var $collection = this;
 
-      handleKeyDown = function(event){
+      var handleKeyDown = function(event){
       
         if(!e){ var e = window.event; }
         
@@ -55,13 +54,13 @@
       };
       
       
-      handleMouseOver = function(){
+      var handleMouseOver = function(){
         $('.'+options.activeClass).removeClass(options.activeClass).trigger('blur');
         $current = $(this).addClass(options.activeClass).trigger('focus');
       };
       
 
-      navigate = function(x, y) {
+      var navigate = function(x, y) {
       
         var delta = x+y;
         var $closest = $current;

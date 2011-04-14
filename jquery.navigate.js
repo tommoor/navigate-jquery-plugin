@@ -8,6 +8,9 @@
 
 (function($){
 
+  var handleKeyDown;
+  var handleMouseOver;
+  var navigate;
   var options;
   var $current;
   var $collection;
@@ -22,15 +25,15 @@
     select: 13
    }
   };
-      
+        
   var methods = {
     init : function(o){
     
-      var options = $.extend(defaults, o);
-      var $current = this.first().addClass(options.activeClass);
-      var $collection = this;
+      options = $.extend(defaults, o);
+      $current = this.first().addClass(options.activeClass);
+      $collection = this;
 
-      var handleKeyDown = function(event){
+      handleKeyDown = function(event){
       
         if(!e){ var e = window.event; }
         
@@ -54,13 +57,13 @@
       };
       
       
-      var handleMouseOver = function(){
+      handleMouseOver = function(){
         $('.'+options.activeClass).removeClass(options.activeClass).trigger('blur');
         $current = $(this).addClass(options.activeClass).trigger('focus');
       };
       
 
-      var navigate = function(x, y) {
+      navigate = function(x, y) {
       
         var delta = x+y;
         var $closest = $current;
@@ -102,7 +105,6 @@
       // bind key and mouse events if required
       $(document).bind('keydown', handleKeyDown);
       if(options.mouse) $collection.bind('mouseover', handleMouseOver);
-       
  
       return this;
     },

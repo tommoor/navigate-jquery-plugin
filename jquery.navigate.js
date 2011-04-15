@@ -110,13 +110,17 @@
     },
     destroy : function(){
     
-      // unbind all plugin event handlers
-      $(document).unbind('keydown', handleKeyDown);
-      $collection.unbind('mouseover', handleMouseOver);
-      $collection.removeClass(options.activeClass);
+      // if bound to a collection
+      if($collection){
       
-      // recover memory
-      options = $current = $collection = null;
+        // unbind all plugin event handlers
+        $(document).unbind('keydown', handleKeyDown);
+        $collection.unbind('mouseover', handleMouseOver);
+        $collection.removeClass(options.activeClass);
+        
+        // recover memory
+        options = $current = $collection = null;
+      }
       
       return this;
     }

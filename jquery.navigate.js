@@ -33,7 +33,7 @@
       $current = this.first().addClass(options.activeClass);
       $collection = this;
 
-      handleKeyDown = function(event){
+      handleKeyDown = function(e){
       
         if(!e){ var e = window.event; }
         

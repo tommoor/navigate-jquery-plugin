@@ -17,12 +17,13 @@ __Example__
 
 ### options
 
-The plugin currently accepts three options,
+The plugin accepts several options,
 
 * mouse (Boolean) - Whether to allow mouse interaction
 * activeClass (String) - The css class that should be added to the currently selected item
 * keys (Object) - An object mapping key names to keycodes, in the following example the keys are mapped to W,A,S,D instead of the default arrow keys
-
+* onSelect - A function called when an element is selected either via mouse or keyboard
+* onFocus - A function called when an element receives focus
 
 __Example 1__
 
@@ -41,6 +42,20 @@ __Example 2__
             left: 83,
             right: 68,
             select: 13
+          }
+        });
+        
+
+__Example 3__
+
+        $('.menu-item').navigate({
+          onSelect: function(){
+            // access to 'this'
+            alert($(this).text() + ' selected!');
+          },
+          onFocus: function(){
+            // access to 'this'
+            alert($(this).text() + ' received focus');
           }
         });
 

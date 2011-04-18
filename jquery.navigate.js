@@ -3,7 +3,7 @@
  * Tom Moor, http://tommoor.com
  * Copyright (c) 2011 Tom Moor
  * MIT Licensed
- * @version 1.0
+ * @version 1.1
  */
 
 (function($){
@@ -17,6 +17,8 @@
   var defaults = {
    mouse: true,
    activeClass: 'active',
+   onSelect: function(){},
+   onFocus: function(){},
    keys: {
     up: 38,
     down: 40,
@@ -99,11 +101,13 @@
         $closest.addClass(options.activeClass);
         $closest.trigger('focus');
         $current = $closest;
+        options.onFocus.call($current);
       }
       
       
       // bind key and mouse events if required
       $(document).bind('keydown', handleKeyDown);
+      $collection.bind('click', options.onSelect);
       if(options.mouse) $collection.bind('mouseover', handleMouseOver);
  
       return this;
@@ -116,6 +120,7 @@
         // unbind all plugin event handlers
         $(document).unbind('keydown', handleKeyDown);
         $collection.unbind('mouseover', handleMouseOver);
+        $collection.unbind('click', options.onSelect);
         $collection.removeClass(options.activeClass);
         
         // recover memory
